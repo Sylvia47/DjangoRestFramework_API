@@ -20,6 +20,4 @@ urlpatterns = (
     path('admin/', admin.site.urls),
     path(r'articles/', include(('articles.urls', 'articles'), namespace='articles')),
     path(r'toDo/', include(('toDo.urls', 'toDo'), namespace='toDo')),
-    path('',include(('todoFrontend.urls', 'todoFrontend'), namespace='todoFrontend'))
-
 )
