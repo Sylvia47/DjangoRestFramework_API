@@ -47,7 +47,6 @@
 
         fetch(url).then(function (response){
             response.json().then(function (data) {
-                console.log(data)
 
                 const list = data
 
@@ -115,7 +114,6 @@
     const form = document.getElementById('form-wrapper')
     form.addEventListener('submit',function (e) {
         e.preventDefault()
-        console.log('form submitted')
         let url= 'http://localhost:8000/toDo/task-create/'
 
         if (activeItem != null){
@@ -138,13 +136,11 @@
     })
 
     function editItem(item){
-        console.log(item, ' edit button has been clicked')
         activeItem = item
         document.getElementById('title').value = activeItem.title
     }
 
     function deleteItem(item){
-        console.log(item, 'delete clicked')
         const url = 'http://localhost:8000/toDo/task-delete/' + item.id + '/'
         fetch(url,{
             method:'DELETE',
@@ -158,7 +154,6 @@
     }
 
     function strikeUnstrike(item){
-        console.log(item,'strike clicked')
         item.completed = !item.completed
         const url = 'http://localhost:8000/toDo/task-update/' + item.id + '/'
         fetch(url,{
